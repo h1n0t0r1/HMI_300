@@ -1,0 +1,31 @@
+1.HMI Buttons
+    a. toggle buttons (Pause, Test Mode, Unload, Step Mode)
+        setOn() - toggle button on
+        setOff() - toggle button off
+
+    b.  normal buttons
+        LockButton
+            setLocked()
+            setUnlocked()
+
+2. Misc
+    EngMode
+        setOn() - show eng mode message
+        setOff() - hide eng mode message
+
+    PLCState
+        setState(state)
+            0 = The Machine is Idle
+            1 = The Machine is Initializing
+            2 = The Machine is Ready
+            3 = The Machine Works
+            4 = The Machine is Paused
+            5 = The Machine is Halted
+
+3. DIO
+    DI
+        setActive()
+        setInactive()
+    DO
+        setActive()
+        setInactive()
