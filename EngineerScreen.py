@@ -22,7 +22,6 @@ class EngineerScreen(QMainWindow):
     def fitToScreen(self, width, height):
         _width = width * 0.95
         box_x_pos = width * 0.02
-
         self.skip_operation_box.resize(_width, height * 0.3)
         self.skip_operation_box.move(box_x_pos, height * 0.05)
 

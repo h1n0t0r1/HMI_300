@@ -6,7 +6,8 @@ class SimpleWindow(QMainWindow):
         self.move(100, 100)
         self.setStyleSheet('background-color: #C0C0C0;')
         self.box = QGroupBox(self)
-        self.box.setStyleSheet('QGroupBox{background-color: #C8DBFE; border-width: 3px; border-color: #9C9C9C; border-style: outset;}')
+        self.box.setStyleSheet('QGroupBox{background-color: #C8DBFE; border-width: 3px; border-color: #9C9C9C;'
+                               ' border-style: outset;}')
 
     def fitToScreen(self, width, height):
         self.resize(width, height)

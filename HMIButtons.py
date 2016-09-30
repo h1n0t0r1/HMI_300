@@ -97,6 +97,11 @@ class IndexerCCWButton(GreenButton):
     def __init__(self, widget):
         super().__init__('Indexer CCW', widget)
 
+class BlueButton(Button):
+    def __init__(self, name, widget):
+        super().__init__(name, widget)
+        self.setStyleSheet('background-color: #96B0D2; font-size: 20px')
+
 class CheckBox(QCheckBox):
     def __init__(self, name, widget):
         super().__init__(name, widget)
