@@ -1,15 +1,13 @@
 from SimpleWindow import SimpleWindow
 from HMIButtons import *
-from Miscs import EngMode, PLCState, MachineError, GoldenSample, ClickableLabel
+from Miscs import EngMode, PLCState, MachineError, GoldenSample, LanguageIcon
 
 class MainScreen(SimpleWindow):
     def __init__(self):
         super().__init__()
 
-        self.test = ClickableLabel('test', self)
-        self.test.resize(200, 40)
-        self.test.move(20, 20)
-        self.test.clicked.connect(lambda: print('koko'))
+        self.language = LanguageIcon(self)
+        self.language.clicked.connect(lambda: self.language.change())
 
         ##      Engineering Mode Alert  ###
         self.eng_mode = EngMode(self)
@@ -52,8 +50,11 @@ class MainScreen(SimpleWindow):
         left_col_x = width * 0.74   # X position of the left column of buttons
         right_col_x = width * 0.859 # X position of the right column of the buttons
 
-        self.eng_mode.resize(width * 0.229, height * 0.092)
-        self.eng_mode.move(left_col_x, height * 0.04)
+        self.language.resize(width * 0.024, height * 0.037)
+        self.language.move(width * 0.943, height * 0.005)
+
+        self.eng_mode.resize(width * 0.229, height * 0.08)
+        self.eng_mode.move(left_col_x, height * 0.05)
 
         self.init_button.resize(_width, _height)
         self.init_button.move(left_col_x, height * 0.142)

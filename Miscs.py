@@ -64,11 +64,28 @@ class ClickableLabel(QLabel):
         super().__init__(name, widget)
 
 
-    def mouseDoubleClickEvent(self, *args, **kwargs):
+    def mousePressEvent(self, QMouseEvent):
         self.clicked.emit()
 
 class LanguageIcon(QLabel):
+    clicked = pyqtSignal()
     def __init__(self, widget):
         super().__init__(widget)
         self.bg = QPixmap('img\\bg.png')
         self.gb = QPixmap('img\\gb.png')
+        self.setPixmap(self.bg)
+        self.lang = 0   # 0 == BG; 1 == EN
+
+    def mousePressEvent(self, QMouseEvent):
+        self.clicked.emit()
+
+    def change(self):
+        if self.lang == 0:
+            self.setPixmap(self.gb)
+            self.lang = 1
+        elif self.lang == 1:
+            self.setPixmap(self.bg)
+            self.lang = 0
+
+
+

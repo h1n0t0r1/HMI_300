@@ -36,10 +36,26 @@ class InitButton(Button):
     def __init__(self, widget):
         super().__init__('INIT', widget)
         self.setStyleSheet('background-color: #85CD9A; font-size: 20px;')
+        self.setLanguage(0)
 
+    def setLanguage(self, idx):
+        if idx == 0:
+            self.setText('Инициализирай')
+            self.setStyleSheet('background-color: #85CD9A; font-size: 16px;')
+        elif idx == 1:
+            self.setText('INIT')
+            self.setStyleSheet('background-color: #85CD9A; font-size: 20px;')
 class StartButton(GreenButton):
     def __init__(self, widget):
-        super().__init__('START', widget)
+        super().__init__('', widget)
+        self.setLanguage(0)
+
+    def setLanguage(self, idx):
+        if idx == 0:
+            self.setText('Старт')
+        elif idx == 1:
+            self.setText('START')
+
 
 class PauseButton(ToggleButton):
     def __init__(self, widget):
