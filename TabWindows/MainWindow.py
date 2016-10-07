@@ -1,5 +1,6 @@
 from MainScreen import MainScreen
 from Stations import  Station
+from PyQt5.QtWidgets import QTextBrowser
 
 class MainWindow(MainScreen):
     def __init__(self):

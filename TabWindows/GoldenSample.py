@@ -4,7 +4,6 @@ from PyQt5 import QtCore
 from HMIButtons import BlueButton, CheckBox
 from rwIni import RWIni
 import functions
-
 class GoldenSample(SimpleWindow):
     def __init__(self):
         super().__init__()

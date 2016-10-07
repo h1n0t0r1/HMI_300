@@ -2,11 +2,9 @@ import sys
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QTabWidget, QMainWindow
-
 import Settings
 from TabWindows import MainWindow, Station1, Station2, Station3, Station4, Station5,Station6,\
                        Station7, Station8, Station9, Station10, Station11, EngineerMenu, GoldenSample
-
 
 class Program(QMainWindow):
     def __init__(self):
@@ -61,8 +59,8 @@ class Program(QMainWindow):
         self.eng_menu = EngineerMenu.EngineerMenu()
         self.settings.settings_tab.addTab(self.eng_menu, 'Engineering Menu')
 
-        self.golden_sample = GoldenSample.GoldenSample()
-        self.settings.settings_tab.addTab(self.golden_sample, 'Golden Sample')
+        #self.golden_sample = GoldenSample.GoldenSample()
+        #self.settings.settings_tab.addTab(self.golden_sample, 'Golden Sample')
         ##
 
         self.resizeEvent = self.onResize

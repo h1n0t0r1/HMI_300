@@ -1,10 +1,15 @@
 from SimpleWindow import SimpleWindow
 from HMIButtons import *
-from Miscs import EngMode, PLCState, MachineError, GoldenSample
+from Miscs import EngMode, PLCState, MachineError, GoldenSample, ClickableLabel
 
 class MainScreen(SimpleWindow):
     def __init__(self):
         super().__init__()
+
+        self.test = ClickableLabel('test', self)
+        self.test.resize(200, 40)
+        self.test.move(20, 20)
+        self.test.clicked.connect(lambda: print('koko'))
 
         ##      Engineering Mode Alert  ###
         self.eng_mode = EngMode(self)

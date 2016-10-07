@@ -1,5 +1,7 @@
-from PyQt5.QtWidgets import QLabel, QDesktopWidget
+from PyQt5.QtWidgets import QLabel
 from PyQt5 import QtCore
+from PyQt5.QtCore import pyqtSignal
+from PyQt5.QtGui import QPixmap
 
 
 class EngMode(QLabel):
@@ -22,7 +24,6 @@ class EngMode(QLabel):
     def setOff(self):
         self.hide()
         self.timer.stop()
-
 
 class PLCState(QLabel):
     def __init__(self, widget):
@@ -56,3 +57,18 @@ class GoldenSample(QLabel):
         super().__init__(widget)
         self.setAlignment(QtCore.Qt.AlignCenter | QtCore.Qt.AlignVCenter)
         self.setStyleSheet('background-color: #F2A408; font-size: 16px; border: 3px outset #9C9C9C;')
+
+class ClickableLabel(QLabel):
+    clicked = pyqtSignal()
+    def __init__(self,name, widget):
+        super().__init__(name, widget)
+
+
+    def mouseDoubleClickEvent(self, *args, **kwargs):
+        self.clicked.emit()
+
+class LanguageIcon(QLabel):
+    def __init__(self, widget):
+        super().__init__(widget)
+        self.bg = QPixmap('img\\bg.png')
+        self.gb = QPixmap('img\\gb.png')
