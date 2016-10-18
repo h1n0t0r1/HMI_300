@@ -6,30 +6,30 @@ class Station1(StationWindow):
         super().__init__()
 
         ##      Inputs      ##
-        self.connector_present = DI('Connector Present', self.box)
-        self.pcb_present = DI('PCB Present', self.box)
-        self.connector_aligned = DI('Connector Aligned', self.box)
-        self.pcb_alligned = DI('PCB Aligned', self.box)
-        self.left_btn = DI('Left Button', self.box)
-        self.right_btn = DI('Right Button', self.box)
-        self.sensor_btn = DI('Sensor Button', self.box)
+        self.i_connector_present = DI('Connector Present', self.box)
+        self.i_pcb_present = DI('PCB Present', self.box)
+        self.i_connector_aligned = DI('Connector Aligned', self.box)
+        self.i_pcb_alligned = DI('PCB Aligned', self.box)
+        self.i_left_btn = DI('Left Button', self.box)
+        self.i_right_btn = DI('Right Button', self.box)
+        self.i_sensor_btn = DI('Sensor Button', self.box)
 
         self.input_collection = (
-            self.connector_present,
-            self.pcb_present,
-            self.connector_aligned,
-            self.pcb_alligned,
-            self.left_btn,
-            self.right_btn,
-            self.sensor_btn
+            self.i_connector_present,
+            self.i_pcb_present,
+            self.i_connector_aligned,
+            self.i_pcb_alligned,
+            self.i_left_btn,
+            self.i_right_btn,
+            self.i_sensor_btn
         )
         ##      Outputs     ##
-        self.left_indicator = DO('Left Button Lamp', self.box)
-        self.right_indicator = DO('Right Button Lamp', self.box)
+        self.o_left_indicator = DO('Left Button Lamp', self.box)
+        self.o_right_indicator = DO('Right Button Lamp', self.box)
 
         self.output_collection = (
-            self.left_indicator,
-            self.right_indicator
+            self.o_left_indicator,
+            self.o_right_indicator
         )
 
     def fitToScreen(self, width, height):

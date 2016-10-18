@@ -6,26 +6,26 @@ class Station2(StationWindow):
         super().__init__()
 
         ##      Inputs       ##
-        self.step_button = DI('Step Button', self.box)
-        self.cycle_button = DI('Cycle Button', self.box)
-        self.gauge_up = DI('Gauge Up', self.box)
-        self.gauge_down = DI('Gauge Down', self.box)
-        self.gauge_result = DI('Gauge Result', self.box)
+        self.i_step_button = DI('Step Button', self.box)
+        self.i_cycle_button = DI('Cycle Button', self.box)
+        self.i_gauge_up = DI('Gauge Up', self.box)
+        self.i_gauge_down = DI('Gauge Down', self.box)
+        self.i_gauge_result = DI('Gauge Result', self.box)
 
         self.input_collection = (
-            self.step_button,
-            self.cycle_button,
-            self.gauge_up,
-            self.gauge_down,
-            self.gauge_result
+            self.i_step_button,
+            self.i_cycle_button,
+            self.i_gauge_up,
+            self.i_gauge_down,
+            self.i_gauge_result
         )
 
         ##       Outputs     ##
-        self.lower_gauge = DO('Lower Gauge', self.box)
+        self.o_lower_gauge = DO('Lower Gauge', self.box)
 
 
         self.output_collection = (
-            self.lower_gauge
+            self.o_lower_gauge
         )
 
     def fitToScreen(self, width, height):
@@ -42,9 +42,8 @@ class Station2(StationWindow):
 
         x_pos = width * StationWindow.output_col_1_x_pos
         y_pos = height * StationWindow.i_o_y_pos
-
-        self.lower_gauge.resize(dio_width, dio_height)
-        self.lower_gauge.move(x_pos, y_pos)
+        self.o_lower_gauge.resize(dio_width, dio_height)
+        self.o_lower_gauge.move(x_pos, y_pos)
         '''for item in self.output_collection:
             item.resize(dio_width, dio_height)
             item.move(x_pos, y_pos)

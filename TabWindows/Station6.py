@@ -6,29 +6,29 @@ class Station6(StationWindow):
         super().__init__()
 
         ##      Inputs      ##
-        self.position_empty = DI('Position Empty', self.box)
-        self.transfered = DI('Transfered', self.box)
+        self.i_position_empty = DI('Position Empty', self.box)
+        self.i_transferred = DI('Transfered', self.box)
 
         self.input_collection = (
-            self.position_empty,
-            self.transfered
+            self.i_position_empty,
+            self.i_transferred
         )
 
         ##      Outputs     ##
-        self.part_available = DO('Part Available', self.box)
-        self.at_position_A0 = DO('At A0 Position', self.box)
-        self.at_position_A1 = DO('At A1 Position', self.box)
-        self.at_position_A2 = DO('At A2 Position', self.box)
-        self.at_position_A3 = DO('At A3 Position', self.box)
-        self.transfer = DO('Transfer', self.box)
+        self.o_part_available = DO('Part Available', self.box)
+        self.o_at_position_A0 = DO('At A0 Position', self.box)
+        self.o_at_position_A1 = DO('At A1 Position', self.box)
+        self.o_at_position_A2 = DO('At A2 Position', self.box)
+        self.o_at_position_A3 = DO('At A3 Position', self.box)
+        self.o_transfer = DO('Transfer', self.box)
 
         self.output_collection = (
-            self.part_available,
-            self.at_position_A0,
-            self.at_position_A1,
-            self.at_position_A2,
-            self.at_position_A3,
-            self.transfer
+            self.o_part_available,
+            self.o_at_position_A0,
+            self.o_at_position_A1,
+            self.o_at_position_A2,
+            self.o_at_position_A3,
+            self.o_transfer
         )
 
     def fitToScreen(self, width, height):

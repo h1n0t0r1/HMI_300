@@ -6,68 +6,68 @@ class Station3(StationWindow):
         super().__init__()
 
         ##      Inputs      ##
-        self.step_button = DI('Step Button', self.box)
-        self.cycle_button = DI('Cycle Button', self.box)
-        self.position_up = DI('Upper Position', self.box)
-        self.position_down = DI('Down Position', self.box)
-        self.pick_up = DI('Pick Up', self.box)
-        self.pick_down = DI('Pick Down', self.box)
-        self.center_up = DI('Center Up', self.box)
-        self.center_down = DI('Center Down', self.box)
-        self.align_open = DI('Aligner Opened', self.box)
-        self.align_close = DI('Aligner Closed', self.box)
-        self.vacuum_ok = DI('Vacuum OK', self.box)
-        self.drive_busy = DI('Drive Busy', self.box)
-        self.drive_area = DI('Drive Area', self.box)
-        self.drive_seton = DI('Drive SETON', self.box)
-        self.drive_inposition = DI('Drive in Position', self.box)
-        self.drive_svre = DI('Drive SVRE', self.box)
-        self.drive_noalarm = DI('Drive no Alarm', self.box)
+        self.i_step_button = DI('Step Button', self.box)
+        self.i_cycle_button = DI('Cycle Button', self.box)
+        self.i_position_up = DI('Upper Position', self.box)
+        self.i_position_down = DI('Down Position', self.box)
+        self.i_pick_up = DI('Pick Up', self.box)
+        self.i_pick_down = DI('Pick Down', self.box)
+        self.i_center_up = DI('Center Up', self.box)
+        self.i_center_down = DI('Center Down', self.box)
+        self.i_align_open = DI('Aligner Opened', self.box)
+        self.i_align_close = DI('Aligner Closed', self.box)
+        self.i_vacuum_ok = DI('Vacuum OK', self.box)
+        self.i_drive_busy = DI('Drive Busy', self.box)
+        self.i_drive_area = DI('Drive Area', self.box)
+        self.i_drive_seton = DI('Drive SETON', self.box)
+        self.i_drive_inposition = DI('Drive in Position', self.box)
+        self.i_drive_svre = DI('Drive SVRE', self.box)
+        self.i_drive_noalarm = DI('Drive no Alarm', self.box)
 
         self.input_collection = (
-            self.step_button,
-            self.cycle_button,
-            self.position_up,
-            self.position_down,
-            self.pick_up,
-            self.pick_down,
-            self.center_up,
-            self.center_down,
-            self.align_open,
-            self.align_close,
-            self.vacuum_ok,
-            self.drive_busy,
-            self.drive_area,
-            self.drive_seton,
-            self.drive_inposition,
-            self.drive_svre,
-            self.drive_noalarm
+            self.i_step_button,
+            self.i_cycle_button,
+            self.i_position_up,
+            self.i_position_down,
+            self.i_pick_up,
+            self.i_pick_down,
+            self.i_center_up,
+            self.i_center_down,
+            self.i_align_open,
+            self.i_align_close,
+            self.i_vacuum_ok,
+            self.i_drive_busy,
+            self.i_drive_area,
+            self.i_drive_seton,
+            self.i_drive_inposition,
+            self.i_drive_svre,
+            self.i_drive_noalarm
         )
         ##      Outputs     ##
-        self.pick = DO('Pick', self.box)
-        self.center = DO('Center', self.box)
-        self.align = DO('Align', self.box)
-        self.vacuum_on = DO('Vacuum ON', self.box)
-        self.blow = DO('Blow', self.box)
-        self.drive_in_0 = DO('Position Bit 0', self.box)
-        self.drive_in_1 = DO('Position Bit 1', self.box)
-        self.drive_in_5 = DO('Position Bit 5', self.box)
-        self.drive_setup = DO('Drive Setup', self.box)
-        self.drive_reset = DO('Drive Reset', self.box)
-        self.drive_svon = DO('Drive Servo On', self.box)
+        self.o_pick = DO('Pick', self.box)
+        self.o_center = DO('Center', self.box)
+        self.o_align = DO('Align', self.box)
+        self.o_vacuum_on = DO('Vacuum ON', self.box)
+        self.o_blow = DO('Blow', self.box)
+        self.o_drive_in_0 = DO('Position Bit 0', self.box)
+        self.o_drive_in_1 = DO('Position Bit 1', self.box)
+        self.o_drive_in_5 = DO('Position Bit 5', self.box)
+        self.o_drive_setup = DO('Drive Setup', self.box)
+        self.o_drive_reset = DO('Drive Reset', self.box)
+        self.o_drive_svon = DO('Drive Servo On', self.box)
 
         self.output_collection = (
-            self.pick,
-            self.center,
-            self.align,
-            self.vacuum_on,
-            self.blow,
-            self.drive_in_0,
-            self.drive_in_1,
-            self.drive_in_5,
-            self.drive_setup,
-            self.drive_reset,
-            self.drive_svon
+            self.o_pick,
+            self.o_center,
+            self.o_align,
+            self.o_vacuum_on,
+            self.o_blow,
+            self.o_drive_in_0,
+            self.o_drive_in_1,
+            self.o_drive_in_5,
+            self.o_drive_setup,
+            self.o_drive_reset,
+            self.o_drive_svon
         )
 
     def fitToScreen(self, width, height):
