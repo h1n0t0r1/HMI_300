@@ -1,13 +1,10 @@
 from SimpleWindow import SimpleWindow
 from HMIButtons import *
-from Miscs import EngMode, PLCState, MachineError, GoldenSample, LanguageIcon
+from Miscs import EngMode, PLCState, MachineError, GoldenSample
 
 class MainScreen(SimpleWindow):
     def __init__(self):
         super().__init__()
-
-        self.language = LanguageIcon(self)
-        self.language.clicked.connect(lambda: self.language.change())
 
         ##      Engineering Mode Alert  ###
         self.eng_mode = EngMode(self)
@@ -50,9 +47,6 @@ class MainScreen(SimpleWindow):
         left_col_x = width * 0.74   # X position of the left column of buttons
         right_col_x = width * 0.859 # X position of the right column of the buttons
 
-        self.language.resize(width * 0.024, height * 0.037)
-        self.language.move(width * 0.943, height * 0.005)
-
         self.eng_mode.resize(width * 0.229, height * 0.08)
         self.eng_mode.move(left_col_x, height * 0.05)
 
@@ -85,3 +79,13 @@ class MainScreen(SimpleWindow):
 
         self.gs_msg.resize(width * 0.229, height * 0.118)
         self.gs_msg.move(left_col_x, height * 0.785)
+
+    def setLanguage(self):
+        self.language.change()
+        self.eng_mode.setLanguage(self.language.lang)
+        self.init_button.setLanguage(self.language.lang)
+        self.start_button.setLanguage(self.language.lang)
+        self.pause_button.setLanguage(self.language.lang)
+        self.test_mode_button.setLanguage(self.language.lang)
+        self.unload_button.setLanguage(self.language.lang)
+        self.lock_button.setLanguage(self.language.lang)

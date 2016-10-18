@@ -159,34 +159,34 @@ class Program(QMainWindow):
     def setIO(self):
         if self.inputs.isChanged:
             if checkBit(self.inputs.getValue(), 0):
-                self.st1.di_1.setActive()
+                self.st1.connector_present.setActive()
             else:
-                self.st1.di_1.setInActive()
+                self.st1.connector_present.setInActive()
 
             if checkBit(self.inputs.getValue(), 1):
-                self.st1.di_2.setActive()
+                self.st1.pcb_present.setActive()
             else:
-                self.st1.di_2.setInActive()
+                self.st1.pcb_present.setInActive()
 
             if checkBit(self.inputs.getValue(), 2):
-                self.st1.di_3.setActive()
+                self.st1.connector_aligned.setActive()
             else:
-                self.st1.di_3.setInActive()
+                self.st1.connector_aligned.setInActive()
 
             if checkBit(self.inputs.getValue(), 3):
-                self.st1.di_4.setActive()
+                self.st1.left_btn.setActive()
             else:
-                self.st1.di_4.setInActive()
+                self.st1.left_btn.setInActive()
 
             if checkBit(self.inputs.getValue(), 4):
-                self.st1.di_5.setActive()
+                self.st1.right_btn.setActive()
             else:
-                self.st1.di_5.setInActive()
+                self.st1.right_btn.setInActive()
 
             if checkBit(self.inputs.getValue(), 5):
-                self.st1.di_6.setActive()
+                self.st1.sensor_btn.setActive()
             else:
-                self.st1.di_6.setInActive()
+                self.st1.sensor_btn.setInActive()
 
             if checkBit(self.inputs.getValue(), 6):
                 self.st1.di_7.setActive()
@@ -202,14 +202,14 @@ class Program(QMainWindow):
 
         if self.outputs.isChanged:
             if checkBit(self.outputs.getValue(), 0):
-                self.st1.do_1.setActive()
+                self.st1.left_indicator.setActive()
             else:
-                self.st1.do_1.setInActive()
+                self.st1.left_indicator.setInActive()
 
             if checkBit(self.outputs.getValue(), 1):
-                self.st1.do_2.setActive()
+                self.st1.right_indicator.setActive()
             else:
-                self.st1.do_2.setInActive()
+                self.st1.right_indicator.setInActive()
 
             if checkBit(self.outputs.getValue(), 2):
                 self.st1.do_3.setActive()

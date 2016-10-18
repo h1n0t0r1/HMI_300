@@ -26,6 +26,8 @@ class Station():
             self.station_skip
         )
 
+
+
         self.setStyle()
 
     def setResize(self, x, y):
